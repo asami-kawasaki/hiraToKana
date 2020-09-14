@@ -4,7 +4,7 @@ import HiraToKana from './HiraToKana.js';
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [isSubmitButton, setIsSubmitButton] = useState(false);
+  const [isPushed, setIsPushed] = useState(false);
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -12,7 +12,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setIsSubmitButton(!isSubmitButton);
+    setIsPushed(!isPushed);
   };
 
   const cancelInput = () => {
@@ -35,7 +35,7 @@ function App() {
         </form>
         <div className="secondContainer">
           <p>変換結果：</p>
-          {isSubmitButton ? <HiraToKana str={inputValue} /> : null}
+          {isPushed ? <HiraToKana str={inputValue} /> : null}
         </div>
         <div className="thirdContainer">
         </div>
